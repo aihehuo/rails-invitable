@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = RailsInvitable::VERSION
   s.authors     = ["Bran Liang"]
   s.email       = ["lby89757@hotmail.com"]
-  s.homepage    = "www.liangboyuan.pub"
+  s.homepage    = "http://www.liangboyuan.pub"
   s.summary     = "Plugable invitation system for rails."
   s.description = "Module invitation design."
   s.license     = "MIT"
