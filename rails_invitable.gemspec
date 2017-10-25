@@ -9,14 +9,14 @@ Gem::Specification.new do |s|
   s.version     = RailsInvitable::VERSION
   s.authors     = ["Bran Liang"]
   s.email       = ["lby89757@hotmail.com"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of RailsInvitable."
-  s.description = "TODO: Description of RailsInvitable."
+  s.homepage    = "www.liangboyuan.pub"
+  s.summary     = "Plugable invitation system for rails."
+  s.description = "Module invitation design."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 5.1.4"
+  s.add_dependency "rails", "~> 5"
 
   s.add_development_dependency "sqlite3"
 end
