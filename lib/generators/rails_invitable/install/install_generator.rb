@@ -1,7 +1,6 @@
 class RailsInvitable::InstallGenerator < Rails::Generators::Base
   class_option :user_class, type: :string
   class_option :no_migrate, :type => :boolean
-  class_option :current_user_helper, :type => :string
 
   source_root File.expand_path('../templates', __FILE__)
   desc "Used to install RailsInvitable"
@@ -19,26 +18,6 @@ class RailsInvitable::InstallGenerator < Rails::Generators::Base
     @user_class = options[:user_class].presence ||
                   ask("What is your user class called? [User]").presence ||
                   'User'
-  end
-
-  def determine_current_user_helper
-    current_user_helper = options[:current_user_helper].presence ||
-                          ask("What is the current_user helper called in your app? [current_user]").presence ||
-                          :current_user
-
-    puts "Defining rails_invitable_user method inside ApplicationController..."
-
-    rails_invitable_user_method = %Q{
-      def rails_invitable_user
-        #{current_user_helper}
-      end
-      helper_method :rails_invitable_user
-    }
-
-    inject_into_file("#{Rails.root}/app/controllers/application_controller.rb",
-                     rails_invitable_user_method,
-                     :after => "ActionController::Base\n")
-
   end
 
   def add_initializer
