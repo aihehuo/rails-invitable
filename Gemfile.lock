@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     rails_invitable (0.1.0)
+      pundit (~> 1.1.0)
       rails (~> 5)
 
 GEM
@@ -67,6 +68,8 @@ GEM
     nio4r (2.1.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
