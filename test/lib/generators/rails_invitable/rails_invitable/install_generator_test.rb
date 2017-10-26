@@ -8,15 +8,10 @@ module RailsInvitable
     setup :prepare_destination
 
     test "generator runs create an initializer file" do
-      run_generator
+      run_generator ['--user_class=User', '--no-migrate=true', '--current_user_helper=current_user']
 
-      assert_file 'config/initializers/rails_invitable.rb', /User/
+      assert_file "#{Rails.root}/config/initializers/rails_invitable.rb", /User/
     end
 
-    test 'user class can be configrated with option user_class' do
-      run_generator ['--user_class=MyUser']
-
-      assert_file 'config/initializers/rails_invitable.rb', /MyUser/
-    end
   end
 end

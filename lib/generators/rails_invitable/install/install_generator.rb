@@ -7,9 +7,11 @@ class RailsInvitable::InstallGenerator < Rails::Generators::Base
   desc "Used to install RailsInvitable"
 
   def install_migrations
-    puts "Copying over migrations..."
-    Dir.chdir(Rails.root) do
-      `bundle exec rails rails_invitable:install:migrations`
+    unless options[:no_migrate]
+      puts "Copying over migrations..."
+      Dir.chdir(Rails.root) do
+        `bundle exec rails rails_invitable:install:migrations`
+      end
     end
   end
 
@@ -57,19 +59,19 @@ class RailsInvitable::InstallGenerator < Rails::Generators::Base
     end
   end
 
-  def mount_engine
-    puts "Mounting RailsInvitable::Engine at \"/rails_invitations\" in config/routes.rb..."
-    insert_into_file("#{Rails.root}/config/routes.rb", :after => /routes.draw.do\n/) do
-      %Q{
-        # This line mounts rails invitable's routes at /rails_invitations by default.
-        mount RailsInvitable::Engine, :at => '/rails_invitations'
-      }
-    end
-  end
+  # def mount_engine
+  #   puts "Mounting RailsInvitable::Engine at \"/rails_invitable\" in config/routes.rb..."
+  #   insert_into_file("#{Rails.root}/config/routes.rb", :after => /routes.draw.do\n/) do
+  #     %Q{
+  #       # This line mounts rails invitable's routes at /rails_invitable by default.
+  #       mount RailsInvitable::Engine, :at => '/rails_invitable'
+  #     }
+  #   end
+  # end
 
   def finish
     output = "\n\n" + ("*" * 53)
-    output += %Q{\nDone! Forem has been successfully installed. Yaaaaay!\n\n}
+    output += %Q{\nDone! RailsInvitable has been successfully installed. Yaaaaay!\n\n}
     puts output
   end
 
