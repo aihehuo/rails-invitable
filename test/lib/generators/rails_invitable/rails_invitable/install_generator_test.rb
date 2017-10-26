@@ -7,10 +7,16 @@ module RailsInvitable
     destination Rails.root.join('tmp/generators')
     setup :prepare_destination
 
-    # test "generator runs without errors" do
-    #   assert_nothing_raised do
-    #     run_generator ["arguments"]
-    #   end
-    # end
+    test "generator runs create an initializer file" do
+      run_generator
+
+      assert_file 'config/initializers/rails_invitable.rb', /User/
+    end
+
+    test 'user class can be configrated with option user_class' do
+      run_generator ['--user_class=MyUser']
+
+      assert_file 'config/initializers/rails_invitable.rb', /MyUser/
+    end
   end
 end
