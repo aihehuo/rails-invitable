@@ -1,9 +1,13 @@
 # RailsInvitable
 Make the invitation function plugable.
 
+## Requirement
+* User has class ApplicationController with method current_user avaiable there.
+* User class which the name can be configured.
+
 ## Usage
 ```ruby
-# initializer
+# config/initializer/rails_invitable.rb
 RailsInvitable.user_class = "User" # Or other user class name used in your project. Should be a string or symbol.
 ```
 
@@ -17,6 +21,11 @@ gem 'rails_invitable'
 And then execute:
 ```bash
 $ bundle
+```
+
+Run install generator
+```bash
+$ bundle exec rails g rails_invitable:intall
 ```
 
 ## License

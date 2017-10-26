@@ -1,0 +1,8 @@
+Description:
+    install
+
+Example:
+    rails generate rails_invitable:install --user_class=MyUser
+
+    This will create:
+        config/initializer/rails_invitable.rb

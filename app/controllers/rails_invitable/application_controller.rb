@@ -1,5 +1,3 @@
-module RailsInvitable
-  class ApplicationController < ActionController::API
-    # protect_from_forgery with: :exception
-  end
+class RailsInvitable::ApplicationController < ActionController
+
 end
