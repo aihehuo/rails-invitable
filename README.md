@@ -21,7 +21,7 @@ $ bundle
 
 Run install generator
 ```bash
-$ bundle exec rails g rails_invitable:intall --user_class=User # Default user_class is User
+$ bundle exec rails g rails_invitable:intall
 ```
 
 ## License
