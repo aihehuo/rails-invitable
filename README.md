@@ -1,6 +1,10 @@
 # RailsInvitable
 Make the invitation function plugable.
 
+## Requirement
+* User has class ApplicationController with method current_user avaiable there.
+* User class which the name can be configured.
+
 ## Usage
 ```ruby
 # config/initializer/rails_invitable.rb
