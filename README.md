@@ -3,7 +3,7 @@ Make the invitation function plugable.
 
 ## Usage
 ```ruby
-# initializer
+# config/initializer/rails_invitable.rb
 RailsInvitable.user_class = "User" # Or other user class name used in your project. Should be a string or symbol.
 ```
 
@@ -17,6 +17,11 @@ gem 'rails_invitable'
 And then execute:
 ```bash
 $ bundle
+```
+
+Run install generator
+```bash
+$ bundle exec rails g rails_invitable:intall --user_class=User # Default user_class is User
 ```
 
 ## License
