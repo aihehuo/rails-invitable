@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026030136) do
+ActiveRecord::Schema.define(version: 20171026073312) do
 
   create_table "rails_invitable_referrals", force: :cascade do |t|
     t.string "code"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20171026030136) do
     t.datetime "updated_at", null: false
     t.index ["code"], name: "index_rails_invitable_referrals_on_code"
     t.index ["user_id"], name: "index_rails_invitable_referrals_on_user_id"
+  end
+
+  create_table "rails_invitable_user_accepted_referrals", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "referral_id", null: false
+    t.datetime "registered_at"
+    t.datetime "completed_at"
+    t.string "phone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phone"], name: "index_rails_invitable_user_accepted_referrals_on_phone"
+    t.index ["referral_id"], name: "index_rails_invitable_user_accepted_referrals_on_referral_id"
+    t.index ["user_id"], name: "index_rails_invitable_user_accepted_referrals_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

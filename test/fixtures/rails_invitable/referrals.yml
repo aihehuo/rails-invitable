@@ -3,3 +3,7 @@
 from_david:
   code: SECRET_CODE
   user: david
+
+from_bran:
+  code: BRAN_SECRET_CODE
+  user: bran

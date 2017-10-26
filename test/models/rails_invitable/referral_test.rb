@@ -10,6 +10,10 @@ module RailsInvitable
       assert rails_invitable_referrals(:from_david).user
     end
 
+    test "has many user accepted referrals" do
+      assert rails_invitable_referrals(:from_david).user_accepted_referrals
+    end
+
     test "user is necessary for referral create" do
       referral = RailsInvitable::Referral.create(code: @code)
 
