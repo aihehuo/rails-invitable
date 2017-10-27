@@ -1,3 +1,2 @@
-class RailsInvitable::ApplicationController < ActionController
-  include Pundit
+class RailsInvitable::ApplicationController < ApplicationController
 end
