@@ -2,8 +2,8 @@
 Make the invitation function plugable.
 
 ## Requirement
-* User has class ApplicationController with method current_user avaiable there.
-* User class which the name can be configured.
+* Host application **must** has `ApplicationController` class with method `current_user` avaiable.
+* `User` model **must** exists, but the name of the model can be configured.
 
 ## Usage
 ```ruby
