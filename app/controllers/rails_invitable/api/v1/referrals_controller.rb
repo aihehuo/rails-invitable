@@ -2,10 +2,11 @@ require_dependency "rails_invitable/application_controller"
 
 module RailsInvitable
   class Api::V1::ReferralsController < ApplicationController
-    def index
+    def show
+      @referral = Referral.find(params[:id])
+      authorize @referral
+      render jsonapi: @referral
     end
 
-    def show
-    end
   end
 end
