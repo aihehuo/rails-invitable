@@ -3,6 +3,7 @@ ActiveRecord::Migrator.migrations_paths = [File.expand_path("../../test/dummy/db
 ActiveRecord::Migrator.migrations_paths << File.expand_path('../../db/migrate', __FILE__)
 require "rails/test_help"
 require 'mocha/mini_test'
+require 'pry-byebug'
 
 # Filter out Minitest backtrace while allowing backtrace from other libraries
 # to be shown.
