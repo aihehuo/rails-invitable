@@ -6,7 +6,7 @@ module RailsInvitable
       @user_accepted_referrals = policy_scope(UserAcceptedReferral)
       paginated_result = @user_accepted_referrals.page(params[:page])
 
-      render jsonapi: paginated_result, include: [:user], meta: pagination(paginated_result)
+      render json: paginated_result, include: [:user], meta: pagination(paginated_result)
     end
 
     # @@params [:phone, :ref_code]
@@ -15,7 +15,7 @@ module RailsInvitable
       @referral = find_referral(params[:ref_code])
       user_accepted_referral = UserAcceptedReferral.new(phone: params[:phone], referral: @referral)
       if user_accepted_referral.save
-        render jsonapi: user_accepted_referral
+        render json: user_accepted_referral
       else
         head 422
       end

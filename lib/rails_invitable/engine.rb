@@ -1,6 +1,6 @@
 require 'pundit'
-require 'jsonapi/rails'
 require 'kaminari'
+require 'active_model_serializers'
 
 module RailsInvitable
   class Engine < ::Rails::Engine

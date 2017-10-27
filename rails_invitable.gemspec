@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 5"
   s.add_dependency "pundit", "~> 1.1.0"
-  s.add_dependency "jsonapi-rails", "~> 0.3.1"
+  s.add_dependency "active_model_serializers", "~> 0.10.6"
   s.add_dependency "kaminari", "~> 1.1.1"
 
   s.add_development_dependency "sqlite3"
