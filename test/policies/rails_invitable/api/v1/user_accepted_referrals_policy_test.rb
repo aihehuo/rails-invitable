@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReferralPolicyTest < ActiveSupport::TestCase
+class Api::V1::UserAcceptedReferralsPolicyTest < ActiveSupport::TestCase
 
   def test_scope
   end
