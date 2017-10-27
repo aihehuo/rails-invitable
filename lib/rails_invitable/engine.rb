@@ -1,5 +1,4 @@
 require 'pundit'
-require 'jsonapi-rails'
 
 module RailsInvitable
   class Engine < ::Rails::Engine
