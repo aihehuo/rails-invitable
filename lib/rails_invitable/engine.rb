@@ -1,3 +1,5 @@
+require 'pundit'
+
 module RailsInvitable
   class Engine < ::Rails::Engine
     isolate_namespace RailsInvitable

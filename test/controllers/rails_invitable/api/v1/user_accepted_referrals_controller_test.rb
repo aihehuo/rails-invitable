@@ -17,5 +17,9 @@ module RailsInvitable
       assert users(:david), ApplicationController.new.current_user
     end
 
+    test "#index list all current_user's accepted_referrals"
+
+    test "#create creates a new user_accepted_referral"
+
   end
 end
