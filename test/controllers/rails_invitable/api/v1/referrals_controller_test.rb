@@ -16,7 +16,7 @@ module RailsInvitable
 
     test "#SHOW normal user can only see their self referral code" do
       get api_v1_referral_url(rails_invitable_referrals(:from_bran).id)
-      
+
       assert_response :unauthorized
     end
 
