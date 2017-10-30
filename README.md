@@ -5,9 +5,9 @@ Make the invitation function plugable.
 * Host application **must** has `ApplicationController` class with method `current_user` avaiable.
 * `User` model **must** exists, but the name of the model can be configured.
 * User instance should be able to respond to public method `admin?`, the result should be `true` or `false`.
-* Each user has a uniq `id`.
+* Each user has a uniq `id` and `openid`.
 * Only `zh-CN` translation is supported.
-* `Pingpp` gem is mandatory for payment implementation.
+* `Pingpp` gem is mandatory for payment implementation. And `pingpp_app_id` needs to be configured.
 
 ## Usage
 #### Red_pocket

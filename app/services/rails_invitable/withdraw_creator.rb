@@ -20,7 +20,7 @@ module RailsInvitable
     def transfer
       @transfer ||= Pingpp::Transfer.create(
   			 :order_no    => order_no,
-    		 :app         => { :id => Rails.application.secrets.pingpp_app_id },
+    		 :app         => { :id => RailsInvitable.configuration.pingpp_app_id },
     		 :channel     => channel,
     		 :amount      => amount * 100,
     		 :currency    => 'cny',
@@ -37,6 +37,7 @@ module RailsInvitable
     end
 
     def order_no
+      @order_no ||= RailsInvitable.configuration.order_prefix + 'T' + Time.now.to_i + 'R' + rand(1000..9999)
     end
   end
 end
