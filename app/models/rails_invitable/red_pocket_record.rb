@@ -5,5 +5,6 @@ module RailsInvitable
 
     validates :referable_id, :referable_type, presence: true
     validates :referable_id, uniqueness: { scope: :referable_type }
+    validates :amount, numericality: { greater_than: 0 }
   end
 end
