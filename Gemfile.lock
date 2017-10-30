@@ -3,7 +3,6 @@ PATH
   specs:
     rails_invitable (0.1.0)
       active_model_serializers (~> 0.10.6)
-      kaminari (~> 1.1.1)
       pundit (~> 1.1.0)
       rails (~> 5)
 
@@ -150,6 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  kaminari (~> 1.1.1)
   mocha
   pry-byebug
   rails_invitable!

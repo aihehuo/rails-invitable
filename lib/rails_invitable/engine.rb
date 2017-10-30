@@ -1,5 +1,4 @@
 require 'pundit'
-require 'kaminari'
 require 'active_model_serializers'
 
 module RailsInvitable
@@ -13,6 +12,13 @@ end
 begin
   require 'pingpp'
 rescue LoadError
-  puts "Please add the pingpp gem to your application's Gemfile. The rails_invitable engine pingpp for payment."
+  puts "Please add the pingpp gem to your application's Gemfile. The rails_invitable engine needs pingpp for payment."
+  exit
+end
+
+begin
+  require 'kaminari'
+rescue LoadError
+  puts "Please add the kaminari gem to your application's Gemfile. The rails_invitable engine needs kaminari for pagination."
   exit
 end
