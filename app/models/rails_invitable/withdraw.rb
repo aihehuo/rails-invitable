@@ -3,7 +3,7 @@ module RailsInvitable
     serialize :transfer, JSON
     serialize :response, JSON
 
-    enum channel: [:wx, :alipay]
+    enum channel: [:wx_pub]
 
     belongs_to :user, class_name: RailsInvitable.user_class.to_s
 
