@@ -13,5 +13,15 @@ module RailsInvitable
       post api_v1_withdraws_url, params: { amount: 10 }
       assert_response :success
     end
+
+    test "fail if amount is too small" do
+      post api_v1_withdraws_url, params: { amount: 1 }
+      assert_response 422
+    end
+
+    test "fail if amount is too big" do
+      post api_v1_withdraws_url, params: { amount: 1001 }
+      assert_response 422
+    end
   end
 end
