@@ -13,3 +13,4 @@ zh-CN:
     payments:
       withdraw_description: "用户%{name}提现%{amount}元"
       not_enought_red_pocket: "红包余额不足"
+      openid_is_missing: "缺少微信ID"

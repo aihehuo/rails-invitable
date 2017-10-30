@@ -41,4 +41,12 @@ class WithdrawCreatorTest < ActiveSupport::TestCase
 
     assert_equal false, withdraw
   end
+
+  test "user openid is necessary" do
+    david = users(:david)
+    david.stubs(:openid).returns(nil)
+    withdraw = RailsInvitable::WithdrawCreator.new(david, 10).call
+
+    assert_equal false, withdraw
+  end
 end

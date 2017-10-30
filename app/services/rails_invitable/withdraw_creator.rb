@@ -76,7 +76,9 @@ module RailsInvitable
     end
 
     def user_has_wechat_openid
-      user.respond_to?(:openid) && user.openid != nil
+      unless user.respond_to?(:openid) && user.openid != nil
+        errors.add(:openid, I18n.t('rails_invitable.payments.openid_is_missing'))
+      end
     end
   end
 end
