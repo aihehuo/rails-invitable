@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030031958) do
+ActiveRecord::Schema.define(version: 20171030034647) do
+
+  create_table "rails_invitable_red_pocket_records", force: :cascade do |t|
+    t.string "referable_type"
+    t.integer "referable_id"
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0", null: false
+    t.boolean "incoming", default: true, null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["referable_type", "referable_id"], name: "index_referable"
+    t.index ["user_id"], name: "index_rails_invitable_red_pocket_records_on_user_id"
+  end
 
   create_table "rails_invitable_referrals", force: :cascade do |t|
     t.string "code"
@@ -35,7 +47,7 @@ ActiveRecord::Schema.define(version: 20171030031958) do
   end
 
   create_table "rails_invitable_withdraws", force: :cascade do |t|
-    t.decimal "amount", default: "0.0", null: false
+    t.decimal "amount", precision: 8, scale: 2, default: "0.0", null: false
     t.integer "user_id", null: false
     t.text "transfer", null: false
     t.text "response"

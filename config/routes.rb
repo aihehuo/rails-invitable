@@ -5,6 +5,7 @@ RailsInvitable::Engine.routes.draw do
       resources :user_accepted_referrals, only: [:index, :create]
       resources :referrals, only: [:show]
       resources :withdraws, only: [:index]
+      resources :red_pocket_records, only: [:index]
     end
   end
 

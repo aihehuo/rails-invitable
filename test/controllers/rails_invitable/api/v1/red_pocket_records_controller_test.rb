@@ -1,7 +1,7 @@
 require 'test_helper'
 
 module RailsInvitable
-  class WithdrawsControllerTest < ActionDispatch::IntegrationTest
+  class Api::V1::RedPocketRecordsControllerTest < ActionDispatch::IntegrationTest
     include Engine.routes.url_helpers
 
     # test "the truth" do
