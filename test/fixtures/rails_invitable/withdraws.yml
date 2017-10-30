@@ -5,4 +5,5 @@ from_david:
   user: david
   transfer: <%= {transfer: true}.to_yaml.inspect %>
   response: <%= {response: true}.to_yaml.inspect %>
-  channel: 0
+  channel: wx_pub
+  order_no: ORDER1
