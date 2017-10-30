@@ -4,6 +4,7 @@ RailsInvitable::Engine.routes.draw do
     namespace :v1 do
       resources :user_accepted_referrals, only: [:index, :create]
       resources :referrals, only: [:show]
+      resources :withdraws, only: [:index]
     end
   end
 

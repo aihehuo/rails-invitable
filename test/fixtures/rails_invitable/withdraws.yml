@@ -1,0 +1,8 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+from_david:
+  amount: 10
+  user: david
+  transfer: <%= {transfer: true}.to_yaml.inspect %>
+  response: <%= {response: true}.to_yaml.inspect %>
+  channel: 0

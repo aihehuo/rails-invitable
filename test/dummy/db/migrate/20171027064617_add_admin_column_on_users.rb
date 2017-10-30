@@ -3,4 +3,3 @@ class AddAdminColumnOnUsers < ActiveRecord::Migration[5.1]
     add_column :users, :admin, :boolean, default: false, null: false
   end
 end
-c
