@@ -52,8 +52,10 @@ ActiveRecord::Schema.define(version: 20171030034647) do
     t.text "transfer", null: false
     t.text "response"
     t.integer "channel", null: false
+    t.string "order_no", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["order_no"], name: "index_rails_invitable_withdraws_on_order_no"
     t.index ["user_id"], name: "index_rails_invitable_withdraws_on_user_id"
   end
 
