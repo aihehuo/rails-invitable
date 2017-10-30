@@ -55,4 +55,12 @@ class WithdrawCreatorTest < ActiveSupport::TestCase
 
     assert_equal false, withdraw
   end
+
+  test "new red pocket record created" do
+    withdraw = RailsInvitable::WithdrawCreator.new(users(:david), 10).call
+    last_red_pocket_record = RailsInvitable::RedPocketRecord.order(created_at: :asc).last
+
+    assert_equal withdraw, last_red_pocket_record.referable
+    assert_equal 10, last_red_pocket_record.amount
+  end
 end
