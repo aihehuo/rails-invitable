@@ -1,7 +1,7 @@
 module RailsInvitable
   class WithdrawPolicy < ApplicationPolicy
     def create?
-      user.red_pocket >= RailsInvitable.configuration.minimum_withdraw_amount
+      true
     end
 
     class Scope < Scope

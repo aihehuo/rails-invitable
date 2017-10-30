@@ -1,5 +1,12 @@
 module RailsInvitable
   class WithdrawsCreator
+    include ActiveModel::Validations
+
+    validates :amount, numericality: { greater_than_or_equal_to: RailsInvitable.configuration.minimum_withdraw_amount }
+    validates :channel, inclusion: { in: %w(wx_pub) }
+    validate :user_has_enough_red_pocket_balance
+    validate :user_has_wechat_openid
+
     def initialize(user, amount, channel)
       @user = user
       @amount = amount
@@ -7,9 +14,14 @@ module RailsInvitable
     end
 
     def call
-      Withdraw.transaction do
-        create_withdraw
-        record
+      if valid?
+        Withdraw.transaction do
+          record(withdraw)
+          charge_user_red_pocket
+        end
+        withdraw
+      else
+        false
       end
     end
 
@@ -30,14 +42,41 @@ module RailsInvitable
   		)
     end
 
-    def create_withdraw
+    def withdraw
+      @withdraw ||= Withdraw.create!(
+        amount: amount,
+        user: user,
+        transfer: transfer,
+        channel: channel,
+        order_no: order_no
+      )
     end
 
-    def record
+    def record(withdraw)
+      RedPocketRecord.create!(
+        referable: withdraw,
+        amount: amount,
+        incoming: false,
+        user: user
+      )
     end
 
     def order_no
       @order_no ||= RailsInvitable.configuration.order_prefix + 'T' + Time.now.to_i + 'R' + rand(1000..9999)
+    end
+
+    def charge_user_red_pocket
+      user.increment!(:red_pocket, -amount)
+    end
+
+    def user_has_enough_red_pocket_balance
+      unless user.red_pocket >= amount
+        errors.add(:amount, I18n.t('rails_invitable.payments.not_enought_red_pocket'))
+      end
+    end
+
+    def user_has_wechat_openid
+      user.respond_to?(openid) && user.openid != nil
     end
   end
 end

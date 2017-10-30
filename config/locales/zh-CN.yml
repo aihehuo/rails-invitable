@@ -12,3 +12,4 @@ zh-CN:
       waiting_opening: "等待对方开通"
     payments:
       withdraw_description: "用户%{name}提现%{amount}元"
+      not_enought_red_pocket: "红包余额不足"
