@@ -8,6 +8,10 @@ Make the invitation function plugable.
 * Each user has a uniq `id`.
 
 ## Usage
+#### Red_pocket
+User will have a new column with attribute red_pocket. Which holds the information of his remaining red_pocket money.
+
+#### 配置
 ```ruby
 # config/initializer/rails_invitable.rb
 RailsInvitable.user_class = "User" # Or other user class name used in your project. Should be a string or symbol.
