@@ -38,5 +38,11 @@ module RailsInvitable
 
       assert_not user_accepted_referral.valid?
     end
+
+    test "user_id should be uniq" do
+      referral = RailsInvitable::UserAcceptedReferral.create(user: users(:yuan), referral: rails_invitable_referrals(:from_david), phone: @phone)
+
+      assert_not referral.valid?
+    end
   end
 end

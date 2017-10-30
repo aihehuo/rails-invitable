@@ -4,5 +4,6 @@ module RailsInvitable
     belongs_to :referral
 
     validates :phone, presence: true, format: { with: /\d{11}/ }, length: { is: 11 }, uniqueness: true
+    validates :user_id, uniqueness: true
   end
 end
