@@ -4,7 +4,7 @@ module RailsInvitable
     attributes :referable_title
     attributes :amount
     attributes :incoming
-    attributes :create_at
+    attributes :created_at
 
     belongs_to :user
   end

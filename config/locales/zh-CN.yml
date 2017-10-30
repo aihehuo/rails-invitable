@@ -6,3 +6,8 @@ zh-CN:
     payment_channels:
       wx: "微信零钱"
       alipay: "支付宝余额"
+    invite:
+      invite: "受邀"
+      be_member: "开通会员"
+      invite_success: "邀请成功"
+      waiting_opening: "等待对方开通"
