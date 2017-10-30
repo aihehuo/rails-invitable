@@ -1,5 +1,5 @@
 module RailsInvitable
-  class WithdrawsCreator
+  class WithdrawCreator
     include ActiveModel::Validations
 
     validates :amount, numericality: { greater_than_or_equal_to: RailsInvitable.configuration.minimum_withdraw_amount }
@@ -7,7 +7,7 @@ module RailsInvitable
     validate :user_has_enough_red_pocket_balance
     validate :user_has_wechat_openid
 
-    def initialize(user, amount, channel)
+    def initialize(user, amount, channel = 'wx_pub')
       @user = user
       @amount = amount
       @channel = channel
@@ -62,7 +62,7 @@ module RailsInvitable
     end
 
     def order_no
-      @order_no ||= RailsInvitable.configuration.order_prefix + 'T' + Time.now.to_i + 'R' + rand(1000..9999)
+      @order_no ||= RailsInvitable.configuration.order_prefix + 'T' + Time.now.to_i.to_s + 'R' + rand(1000..9999).to_s
     end
 
     def charge_user_red_pocket
@@ -76,7 +76,7 @@ module RailsInvitable
     end
 
     def user_has_wechat_openid
-      user.respond_to?(openid) && user.openid != nil
+      user.respond_to?(:openid) && user.openid != nil
     end
   end
 end
