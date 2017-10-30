@@ -63,4 +63,10 @@ class WithdrawCreatorTest < ActiveSupport::TestCase
     assert_equal withdraw, last_red_pocket_record.referable
     assert_equal 10, last_red_pocket_record.amount
   end
+
+  test "user red_pocket amount will be charged" do
+    RailsInvitable::WithdrawCreator.new(users(:david), 10).call
+
+    assert_equal 990, users(:david).red_pocket
+  end
 end
