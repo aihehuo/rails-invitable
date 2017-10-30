@@ -7,6 +7,7 @@ Make the invitation function plugable.
 * User instance should be able to respond to public method `admin?`, the result should be `true` or `false`.
 * Each user has a uniq `id`.
 * Only `zh-CN` translation is supported.
+* `Pingpp` gem is mandatory for payment implementation.
 
 ## Usage
 #### Red_pocket
