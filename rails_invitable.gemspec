@@ -24,4 +24,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "mocha"
   s.add_development_dependency "pry-byebug"
+  s.add_development_dependency "pingpp", "~> 2.1.3"
 end
