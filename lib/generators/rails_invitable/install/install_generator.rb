@@ -38,15 +38,19 @@ class RailsInvitable::InstallGenerator < Rails::Generators::Base
     end
   end
 
-  # def mount_engine
-  #   puts "Mounting RailsInvitable::Engine at \"/rails_invitable\" in config/routes.rb..."
-  #   insert_into_file("#{Rails.root}/config/routes.rb", :after => /routes.draw.do\n/) do
-  #     %Q{
-  #       # This line mounts rails invitable's routes at /rails_invitable by default.
-  #       mount RailsInvitable::Engine, :at => '/rails_invitable'
-  #     }
-  #   end
-  # end
+  def mount_engine
+    if File.open("#{Rails.root}/config/routes.rb").read().match(/mount RailsInvitable::Engine/)
+      puts "Skip auto mounting. RailsInvitable::Engine already mounted."
+    else
+      puts "Mounting RailsInvitable::Engine at \"/rails_invitable\" in config/routes.rb..."
+      insert_into_file("#{Rails.root}/config/routes.rb", :after => /routes.draw.do\n/) do
+        %Q{
+          # This line mounts rails invitable's routes at /rails_invitable by default.
+          mount RailsInvitable::Engine, :at => '/rails_invitable'
+        }
+      end
+    end
+  end
 
   def finish
     output = "\n\n" + ("*" * 53)
