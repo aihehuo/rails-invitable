@@ -3,7 +3,7 @@ require 'test_helper'
 class WithdrawCreatorTest < ActiveSupport::TestCase
 
   setup do
-    Pingpp::Transfer.expects(:create).with(Not(equals(nil))).returns({
+    @pingpp_response = {
       "id": "tr_HqbzHCvLOaL4La1ezHfDWTqH",
       "object": "transfer",
       "type": "b2c",
@@ -25,13 +25,20 @@ class WithdrawCreatorTest < ActiveSupport::TestCase
           "user_name": "User Name",
           "force_check": true
          }
-    })
+    }
+    Pingpp::Transfer.expects(:create).with(Not(equals(nil))).at_least(0).returns(@pingpp_response)
   end
 
   test "call is success" do
     withdraw = RailsInvitable::WithdrawCreator.new(users(:david), 10).call
-    binding.pry
+
     assert withdraw
     assert_equal 10, withdraw.amount
+  end
+
+  test "amount can not be greater than user balance" do
+    withdraw = RailsInvitable::WithdrawCreator.new(users(:david), 1001).call
+
+    assert_equal false, withdraw
   end
 end
