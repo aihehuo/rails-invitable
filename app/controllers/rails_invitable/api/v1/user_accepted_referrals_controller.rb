@@ -4,9 +4,8 @@ module RailsInvitable
   class Api::V1::UserAcceptedReferralsController < ApplicationController
     def index
       @user_accepted_referrals = policy_scope(UserAcceptedReferral)
-      paginated_result = @user_accepted_referrals.page(params[:page])
-
-      render json: paginated_result, include: [:user], meta: pagination(paginated_result)
+      
+      render_pagination(@user_accepted_referrals, [:user])
     end
 
     # @@params [:phone, :ref_code]

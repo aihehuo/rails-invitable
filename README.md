@@ -6,6 +6,7 @@ Make the invitation function plugable.
 * `User` model **must** exists, but the name of the model can be configured.
 * User instance should be able to respond to public method `admin?`, the result should be `true` or `false`.
 * Each user has a uniq `id`.
+* Only `zh-CN` translation is supported.
 
 ## Usage
 #### Red_pocket

@@ -1,0 +1,8 @@
+zh-CN:
+  rails_invitable:
+    titles:
+      user_accepted_referral: "邀请%{name}成功"
+      withdraw: "提现到%{payment_name}"
+    payment_channels:
+      wx: "微信零钱"
+      alipay: "支付宝余额"

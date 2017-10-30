@@ -7,11 +7,11 @@ module RailsInvitable
     end
 
     test "belongs_to referral" do
-      assert rails_invitable_user_accepted_referrals(:from_yuan_created).referral
+      assert rails_invitable_user_accepted_referrals(:from_yuan_completed).referral
     end
 
     test "belongs_to user" do
-      assert rails_invitable_user_accepted_referrals(:from_yuan_created).user
+      assert rails_invitable_user_accepted_referrals(:from_yuan_completed).user
     end
 
     test "user is optional" do
