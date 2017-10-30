@@ -49,4 +49,10 @@ class WithdrawCreatorTest < ActiveSupport::TestCase
 
     assert_equal false, withdraw
   end
+
+  test "amount should be greater than the configuration limit" do
+    withdraw = RailsInvitable::WithdrawCreator.new(users(:david), 1).call
+
+    assert_equal false, withdraw
+  end
 end
