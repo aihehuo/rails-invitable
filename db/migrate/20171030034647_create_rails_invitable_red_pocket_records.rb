@@ -1,4 +1,4 @@
-class CreateRailsInvitableRedPocketRecords < ActiveRecord::Migration[5.1]
+class CreateRailsInvitableRedPocketRecords < ActiveRecord::Migration
   def change
     create_table :rails_invitable_red_pocket_records do |t|
       t.references :referable, polymorphic: true, index: {:name => "index_referable"}, unique: true

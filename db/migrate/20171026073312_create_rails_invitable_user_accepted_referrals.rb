@@ -1,4 +1,4 @@
-class CreateRailsInvitableUserAcceptedReferrals < ActiveRecord::Migration[5.1]
+class CreateRailsInvitableUserAcceptedReferrals < ActiveRecord::Migration
   def change
     create_table :rails_invitable_user_accepted_referrals do |t|
       t.integer :user_id

@@ -36,6 +36,7 @@ Run install generator
 ```bash
 $ bundle exec rails g rails_invitable:install
 ```
+`rake db:migrate` may fail because of wrong rails version, got to the migrations and fix the files manually.
 
 ## Development
 #### Test

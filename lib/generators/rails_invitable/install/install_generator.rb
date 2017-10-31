@@ -9,7 +9,7 @@ class RailsInvitable::InstallGenerator < Rails::Generators::Base
     unless options[:no_migrate]
       puts "Copying over migrations..."
       Dir.chdir(Rails.root) do
-        `bundle exec rails rails_invitable:install:migrations`
+        `bundle exec rake rails_invitable:install:migrations`
       end
     end
   end

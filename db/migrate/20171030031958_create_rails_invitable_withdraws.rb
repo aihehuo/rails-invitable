@@ -1,4 +1,4 @@
-class CreateRailsInvitableWithdraws < ActiveRecord::Migration[5.1]
+class CreateRailsInvitableWithdraws < ActiveRecord::Migration
   def change
     create_table :rails_invitable_withdraws do |t|
       t.decimal :amount, default: 0.0, precision: 8, scale: 2, null: false

@@ -1,4 +1,4 @@
-class CreateRailsInvitableReferrals < ActiveRecord::Migration[5.1]
+class CreateRailsInvitableReferrals < ActiveRecord::Migration
   def change
     create_table :rails_invitable_referrals do |t|
       t.string :code, unique: true
