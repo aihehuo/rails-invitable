@@ -2,7 +2,7 @@
 Make the invitation function plugable.
 
 ## Requirement
-* Host application **must** has `ApplicationController` class with method `current_user` avaiable.
+* Host application **must** has `API::CurrentUserHelper` module with method `current_user` avaiable.
 * `User` model **must** exists, but the name of the model can be configured.
 * User instance should be able to respond to public method `admin?`, the result should be `true` or `false`.
 * Each user has a uniq `id` and `openid`.
