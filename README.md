@@ -24,7 +24,7 @@ RailsInvitable.user_class = "User" # Or other user class name used in your proje
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rails_invitable'
+gem 'rails_invitable', :git => 'git://github.com/aihehuo/rails-invitable.git'
 ```
 
 And then execute:
