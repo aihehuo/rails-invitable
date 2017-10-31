@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ReferralCreatorTest < ActiveSupport::TestCase
+class ReferralRegisterTest < ActiveSupport::TestCase
   setup do
     @phone = 13382019999
   end
