@@ -1,5 +1,5 @@
 module RailsInvitable
-  class ApplicationController < ActionController::API
+  class ApplicationController < ActionController::Base
     include ::API::CurrentUserHelper
     include Pundit
     after_action :verify_authorized, except: :index
