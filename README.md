@@ -8,6 +8,7 @@ Make the invitation function plugable.
 * Each user has a uniq `id` and `openid`.
 * Only `zh-CN` translation is supported.
 * `Pingpp` gem is mandatory for payment implementation. And `pingpp_app_id` needs to be configured.
+* User has a method `phone` which can get its phone number.
 
 ## Usage
 #### Red_pocket

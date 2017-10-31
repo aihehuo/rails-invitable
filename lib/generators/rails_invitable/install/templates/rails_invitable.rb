@@ -6,3 +6,7 @@ RailsInvitable.configure do |config|
 end
 
 RailsInvitable.user_class = "<%= user_class %>"
+
+RailsInvitable.user_class.class_eval do
+  include RailsInvitable::AcceptedReferralActions
+end
