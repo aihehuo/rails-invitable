@@ -4,7 +4,7 @@ PATH
     rails_invitable (0.1.0)
       active_model_serializers (~> 0.10.6)
       pundit (~> 1.1.0)
-      rails
+      rails (>= 4.2)
 
 GEM
   remote: https://rubygems.org/
