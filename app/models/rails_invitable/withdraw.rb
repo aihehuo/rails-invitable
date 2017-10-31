@@ -5,7 +5,7 @@ module RailsInvitable
 
     enum channel: [:wx_pub]
 
-    belongs_to :user, class_name: RailsInvitable.user_class.to_s
+    belongs_to :user, class_name: RailsInvitable.user_class.to_s, required: true
 
     def title
       I18n.t('rails_invitable.titles.withdraw', payment_name: I18n.t("rails_invitable.payment_channels.#{channel}"))
