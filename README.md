@@ -34,7 +34,7 @@ $ bundle
 
 Run install generator
 ```bash
-$ bundle exec rails g rails_invitable:intall
+$ bundle exec rails g rails_invitable:install
 ```
 
 ## Development
