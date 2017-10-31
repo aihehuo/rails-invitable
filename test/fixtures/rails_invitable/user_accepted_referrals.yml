@@ -16,3 +16,7 @@ registered:
   user: other
   referral: from_bran
   phone: 13584000002
+
+not_registered:
+  phone: 13382019999
+  referral: from_bran
