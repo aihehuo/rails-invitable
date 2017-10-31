@@ -11,9 +11,9 @@ class RailsInvitable::Test < ActiveSupport::TestCase
 
   test 'Configuration is working' do
     RailsInvitable.configure do |config|
-      config.minimum_withdraw_amount = 99
+      config.order_prefix = 'HI'
     end
 
-    assert_equal 99, RailsInvitable.configuration.minimum_withdraw_amount
+    assert_equal 'HI', RailsInvitable.configuration.order_prefix
   end
 end
