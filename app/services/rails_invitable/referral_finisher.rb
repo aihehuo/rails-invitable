@@ -25,11 +25,15 @@ module RailsInvitable
     end
 
     def record_the_reward
-      RedPocketRecord.create!(referable: referral, amount: reward_amount, incoming: true, user: user)
+      RedPocketRecord.create!(referable: referral, amount: reward_amount, incoming: true, user: referral_owner)
     end
 
     def give_reward_to_user
-      referral.referral.user.increment!(:red_pocket, reward_amount)
+      referral_owner.increment!(:red_pocket, reward_amount)
+    end
+
+    def referral_owner
+      @referral_owner ||= referral.referral.user
     end
 
     def referral

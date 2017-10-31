@@ -10,8 +10,8 @@ class ReferralFinisherTest < ActiveSupport::TestCase
   end
 
   test "red_pocket reward is rewarded" do
-    user_other_red_pocket_records = RailsInvitable::RedPocketRecord.where(user: users(:other))
-    assert_equal 1, user_other_red_pocket_records.length
+    user_other_red_pocket_records = RailsInvitable::RedPocketRecord.where(user: users(:bran))
+    assert_equal 2, user_other_red_pocket_records.length
   end
 
   test "user red_pocket increased" do
