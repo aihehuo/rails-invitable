@@ -1,5 +1,6 @@
 require "rails_invitable/engine"
 require "rails_invitable/configuration"
+require "rails_invitable/accepted_referral_actions"
 
 module RailsInvitable
   mattr_accessor :user_class

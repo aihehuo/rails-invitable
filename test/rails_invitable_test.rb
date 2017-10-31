@@ -11,9 +11,9 @@ class RailsInvitable::Test < ActiveSupport::TestCase
 
   test 'Configuration is working' do
     RailsInvitable.configure do |config|
-      config.allowed_withdraw_channels = ['test']
+      config.minimum_withdraw_amount = 99
     end
 
-    assert_equal ['test'], RailsInvitable.configuration.allowed_withdraw_channels
+    assert_equal 99, RailsInvitable.configuration.minimum_withdraw_amount
   end
 end

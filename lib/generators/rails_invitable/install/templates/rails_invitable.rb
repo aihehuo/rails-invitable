@@ -7,6 +7,7 @@ end
 
 RailsInvitable.user_class = "<%= user_class %>"
 
-RailsInvitable.user_class.class_eval do
-  include RailsInvitable::AcceptedReferralActions
-end
+# Modify the user class
+# RailsInvitable.user_class.class_eval do
+#
+# end
