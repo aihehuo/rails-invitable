@@ -29,7 +29,7 @@ module RailsInvitable
     end
 
     def give_reward_to_user
-      user.increment!(:red_pocket, reward_amount)
+      referral.referral.user.increment!(:red_pocket, reward_amount)
     end
 
     def referral

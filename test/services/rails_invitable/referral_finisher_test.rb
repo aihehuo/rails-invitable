@@ -16,6 +16,6 @@ class ReferralFinisherTest < ActiveSupport::TestCase
 
   test "user red_pocket increased" do
     expected = RailsInvitable.configuration.referral_complete_red_pocket_reward
-    assert_equal expected, users(:other).red_pocket
+    assert_equal expected, users(:bran).red_pocket
   end
 end
