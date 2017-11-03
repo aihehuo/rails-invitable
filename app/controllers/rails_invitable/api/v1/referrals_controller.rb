@@ -5,7 +5,7 @@ module RailsInvitable
     def show
       @referral = Referral.find(params[:id])
       authorize @referral
-      render json: @referral, include: [:user]
+      render json: @referral, include: [:user], root: :data
     end
 
   end

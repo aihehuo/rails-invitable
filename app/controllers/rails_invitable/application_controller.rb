@@ -14,7 +14,7 @@ module RailsInvitable
     def render_pagination(list, includes = [])
       paginated_result = list.page(params[:page])
 
-      render json: paginated_result, include: includes, meta: pagination(paginated_result)
+      render json: paginated_result, root: :data, include: includes, meta: pagination(paginated_result)
     end
 
     def pagination(object)
