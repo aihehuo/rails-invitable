@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+from_david:
+  referable: from_yuan_completed(RailsInvitable::UserAcceptedReferral)
+  amount: 20
+  incoming: true
+  user: david
+
+from_bran:
+  referable: from_david_completed(RailsInvitable::UserAcceptedReferral)
+  amount: 20
+  incoming: true
+  user: bran

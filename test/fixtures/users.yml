@@ -1,8 +1,16 @@
 david:
   name: David
+  red_pocket: 1000
 
 yuan:
   name: Yuan
 
 bran:
   name: Bran
+  red_pocket: 0
+
+other:
+  name: OtherMan
+
+batman:
+  name: Batman

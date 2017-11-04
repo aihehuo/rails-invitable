@@ -1,0 +1,16 @@
+zh-CN:
+  rails_invitable:
+    titles:
+      user_accepted_referral: "邀请%{name}成功"
+      withdraw: "提现到%{payment_name}"
+    payment_channels:
+      wx_pub: "微信零钱"
+    invite:
+      invite: "受邀"
+      be_member: "开通会员"
+      invite_success: "邀请成功"
+      waiting_opening: "等待对方开通"
+    payments:
+      withdraw_description: "用户%{name}提现%{amount}元"
+      not_enought_red_pocket: "红包余额不足"
+      openid_is_missing: "缺少微信ID"

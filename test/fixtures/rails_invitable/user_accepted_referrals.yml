@@ -1,16 +1,23 @@
-DEFAULTS: &DEFAULTS
+from_yuan_completed:
   user: yuan
   referral: from_david
   phone: 13584098989
-
-from_yuan_created:
-  <<: *DEFAULTS
-
-from_yuan_registered:
-  registered_at: 2017-10-25 15:33:12
-  <<: *DEFAULTS
-
-from_yuan_completed:
   registered_at: 2017-10-25 15:33:12
   completed_at: 2017-10-26 15:33:12
-  <<: *DEFAULTS
+
+from_david_completed:
+  user: david
+  referral: from_bran
+  phone: 13584000001
+  registered_at: 2017-10-25 15:33:12
+  completed_at: 2017-10-26 15:33:12
+
+registered:
+  user: other
+  referral: from_bran
+  registered_at: 2017-10-25 15:33:12
+  phone: 13584000002
+
+not_registered:
+  phone: 13382019999
+  referral: from_bran

@@ -11,9 +11,9 @@ class RailsInvitable::Test < ActiveSupport::TestCase
 
   test 'Configuration is working' do
     RailsInvitable.configure do |config|
-      config.allowed_withdraw_channels = ['test']
+      config.order_prefix = 'HI'
     end
 
-    assert_equal ['test'], RailsInvitable.configuration.allowed_withdraw_channels
+    assert_equal 'HI', RailsInvitable.configuration.order_prefix
   end
 end
