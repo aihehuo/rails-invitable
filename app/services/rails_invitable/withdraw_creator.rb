@@ -15,10 +15,6 @@ module RailsInvitable
 
     def call
       if valid?
-        Withdraw.transaction do
-          record(withdraw)
-          charge_user_red_pocket
-        end
         withdraw
       else
         false
@@ -52,21 +48,8 @@ module RailsInvitable
       )
     end
 
-    def record(withdraw)
-      RedPocketRecord.create!(
-        referable: withdraw,
-        amount: amount,
-        incoming: false,
-        user: user
-      )
-    end
-
     def order_no
       @order_no ||= RailsInvitable.configuration.order_prefix + 'T' + Time.now.to_i.to_s + 'R' + rand(1000..9999).to_s
-    end
-
-    def charge_user_red_pocket
-      user.increment!(:red_pocket, -amount)
     end
 
     def user_has_enough_red_pocket_balance
