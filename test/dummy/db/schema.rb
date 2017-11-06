@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030034647) do
+ActiveRecord::Schema.define(version: 20171106100937) do
 
   create_table "rails_invitable_red_pocket_records", force: :cascade do |t|
     t.string "referable_type"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20171030034647) do
     t.string "order_no", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "success", default: false
     t.index ["order_no"], name: "index_rails_invitable_withdraws_on_order_no"
     t.index ["user_id"], name: "index_rails_invitable_withdraws_on_user_id"
   end
