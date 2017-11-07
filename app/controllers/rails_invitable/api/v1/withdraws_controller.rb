@@ -13,8 +13,10 @@ module RailsInvitable
     end
 
     def succeed
-      return unless RailsInvitable.configuration.webhook_ip_whitelist.include? env["action_dispatch.remote_ip"].to_s
-      
+      unless RailsInvitable.configuration.webhook_ip_whitelist.include? env["action_dispatch.remote_ip"].to_s
+        Rails.logger.info "#{RailsInvitable.configuration.webhook_ip_whitelist} does not have #{env["action_dispatch.remote_ip"].to_s}"
+        return 
+      end
       if params[:type] == 'transfer.succeeded'
         WithdrawSuccessor.new(params[:data][:object][:order_no], params).call
       end
