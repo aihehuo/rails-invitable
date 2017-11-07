@@ -18,7 +18,9 @@ module RailsInvitable
         return 
       end
       if params[:type] == 'transfer.succeeded'
+        Rails.logger.info "Calling withdraw succeed #{params[:data][:object][:order_no]}"
         WithdrawSuccessor.new(params[:data][:object][:order_no], params).call
+        head 201
       end
     end
   end
