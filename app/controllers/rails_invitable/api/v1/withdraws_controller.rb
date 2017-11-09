@@ -5,10 +5,12 @@ module RailsInvitable
     def create
       authorize Withdraw
       withdraw = WithdrawCreator.new(current_user, params[:amount].to_f).call
-      if withdraw
+      if withdraw and withdraw.is_a? Withdraw
         render json: { data: withdraw.transfer, channel: withdraw.channel }.to_json, status: :created
+      elsif withdraw.is_a? String
+        render json: { error: { message: withdraw } }.to_json, status: 422
       else
-        render json: { error: { message: '提现失败' } }.to_json, status: 422
+        render json: { error: { message: "提现失败" } }.to_json, status: 422
       end
     end
 

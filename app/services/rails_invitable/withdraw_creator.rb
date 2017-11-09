@@ -15,9 +15,19 @@ module RailsInvitable
 
     def call
       if valid?
-        withdraw
+        if withdraw and withdraw.transfer["status"] == "failed"
+          case withdraw.transfer["failure_msg"]
+          when /该用户今日付款次数超过限制/
+            err_msg = "每天只能提现一次"
+          else
+            err_msg = '提现失败，请联系客服'
+          end
+          return err_msg
+        else
+          return withdraw
+        end
       else
-        false
+        return false
       end
     end
 
