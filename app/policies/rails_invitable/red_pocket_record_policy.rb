@@ -3,7 +3,7 @@ module RailsInvitable
     class Scope < Scope
       def resolve
         if user.admin?
-          scope.all
+          scope.where(user: user)
         else
           scope.where(user: user)
         end
